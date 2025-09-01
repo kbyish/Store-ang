@@ -1,6 +1,6 @@
 <h2> Product list</h2>
  <div class="card-container">
-       @for (product of products; track product) {
+       @for (product of products$| async ; track product) {
       <div  class="card">
         <!-- Card content goes here -->
                 <h3>{{ product.name }}</h3>
