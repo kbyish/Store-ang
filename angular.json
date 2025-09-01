@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "product-final": {
+    "product-ang": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "product-final:build:production"
+              "buildTarget": "product-ang:build:production"
             },
             "development": {
-              "buildTarget": "product-final:build:development"
+              "buildTarget": "product-ang:build:development"
             }
           },
           "defaultConfiguration": "development"
