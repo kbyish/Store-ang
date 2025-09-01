@@ -57,3 +57,19 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+1-Add to github 
+ 
+    1- run command  
+        git init
+    2- run command 
+        git add .
+    3- run command 
+         git commit -m "Initial commit of existing project"
+    4- git remote add origin <remote repository URL>
+        git remote add origin   https://github.com/kbyish/Store-ang.git
+
+        you can get the url from website like github 
+        after you create  a new 
+    go to github and create new repository and get url of that 
+    Ex: 

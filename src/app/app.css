@@ -1,0 +1,31 @@
+.top-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #212121;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+  z-index: 1000;
+}
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+/*border:5px dashed red;*/
+}:hover{
+
+
+}
+
+.top-nav.a.hover{
+cursor: pointer;
+}
+.top-nav a.active {
+  text-decoration: underline;
+}
+main {
+  margin-top: 4rem;
+  padding: 2rem;
+}
+
