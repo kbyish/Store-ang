@@ -1,14 +1,3 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class ProductService {
-  
-// }
-
-
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -18,7 +7,7 @@ import { Product, ProductData } from '../models/product.model';
 export class ProductService {
   private apiUrl = '/api/products';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
     console.log('getProducts()::');
@@ -40,4 +29,13 @@ export class ProductService {
   deleteProduct(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  uploadCsv(file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('file', file, file.name); // 'csvFile' should match the backend's expected field name
+    console.log('product-services::uploadCsv()');
+    return this.http.post(`${this.apiUrl}/UploadCsv/getCsvData`, formData);
+
+  }
+
 }
