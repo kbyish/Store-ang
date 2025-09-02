@@ -10,5 +10,6 @@ export const PRODUCT_ROUTES: Routes = [
   { path: 'product/:id', component: ProductDetailComponent },
   { path: ':id', component: ProductDetailComponent },
   { path: ':id/edit', component: ProductFormComponent },
-  { path: 'upload/test', component: ProductUploadComponent }
+  { path: 'addproduct/new', component: ProductFormComponent },
+  { path: 'upload/csvupload', component: ProductUploadComponent }
 ];

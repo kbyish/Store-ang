@@ -8,15 +8,7 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     selector: 'app-product-form',
     imports: [CommonModule, ReactiveFormsModule, RouterModule],
-    template: `
-    <form [formGroup]="form" (ngSubmit)="submit()">
-      <label>Name: <input formControlName="name" /></label><br />
-      <label>Description: <input formControlName="description" /></label><br />
-      <label>Price: <input formControlName="price" type="number" /></label><br />
-      <label>Category: <input formControlName="category" /></label><br />
-      <button type="submit">{{isEdit ? 'Update' : 'Create'}} Product</button>
-    </form>
-  `
+    templateUrl: './product-form.component.html'
 })
 export class ProductFormComponent implements OnInit {
     form: FormGroup;
@@ -39,7 +31,9 @@ export class ProductFormComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log('product-form:: ngOnInit()');
         this.id = this.route.snapshot.paramMap.get('id')!;
+        console.log('product-form:: ngOnInit(): this.id =', this.id);
         if (this.id) {
             this.isEdit = true;
             this.productService.getProduct(+this.id).subscribe(product => this.form.patchValue(product));

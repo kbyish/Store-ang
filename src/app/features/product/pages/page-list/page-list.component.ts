@@ -1,11 +1,10 @@
-import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { RouterLink } from "@angular/router";
 
-
-import { Product } from '../../models/product.model'
 import { ProductService } from "../../services/product-service";
 import { Observable } from "rxjs";
+import { Product } from "../../models/product.model";
 
 @Component({
     selector: 'app-product-list',
@@ -14,10 +13,16 @@ import { Observable } from "rxjs";
     styleUrl: './page-list.css'
 })
 export class ProductList implements OnInit {
+    products:Product[]=[];
     products$!: Observable<any>;
     constructor(private productService: ProductService, private cdr: ChangeDetectorRef) { }
     ngOnInit(): void {
         console.log('page-list::ngOnInit()');
+        // this.productService.getProducts().subscribe((data)=>{
+        //      console.log('page-list::ngOnInit()  data=', data);
+        //     this.products = data;
+        //     this.cdr.detectChanges();
+        // });
         this.products$ = this.productService.getProducts();
         this.cdr.detectChanges();
      }
