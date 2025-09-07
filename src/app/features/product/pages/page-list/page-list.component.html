@@ -6,8 +6,8 @@
                 
         <h3> ID ={{product.id}} | {{ product.name }}</h3> 
                 <p>Price: ${{ product.price }}</p>
-                <p>Description: ${{ product.description }}</p>
-                <p>Category: ${{ product.category }}</p>
+                <p>Description: {{ product.description }}</p>
+                <p>Category: {{ product.category }}</p>
             <a [routerLink]="['/products', product.id]">View</a> |
             <a [routerLink]="['/products', product.id, 'edit']">Edit</a> |
             <button (click)="delete(product.id)">Delete</button>

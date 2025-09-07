@@ -34,7 +34,7 @@ export class ProductService {
     const formData = new FormData();
     formData.append('file', file, file.name); // 'csvFile' should match the backend's expected field name
     console.log('product-services::uploadCsv()');
-    return this.http.post(`${this.apiUrl}/UploadCsv/getCsvData`, formData);
+    return this.http.post(`${this.apiUrl}/UploadCsv`, formData);
 
   }
 
